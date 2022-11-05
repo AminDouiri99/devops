@@ -15,7 +15,7 @@ services:
   app:
     depends_on:
       - mysqldb
-    image: nabilbk/spring
+    image: nabil007/spring
     restart: on-failure
     ports:
       - 8089:8089
