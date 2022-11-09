@@ -1,4 +1,3 @@
-FROM openjdk:8-jdk-alpine
-EXPOSE 8083
-ADD target/docker-spring-boot.war docker-spring-boot.war
-ENTRYPOINT ["java","-jar","/docker-spring-boot.war"]
+From openjdk:8
+copy ./target/tpAchatProject-1.0-SNAPSHOT.jar tpAchatProject-1.0-SNAPSHOT.jar
+CMD ["java","-jar","tpAchatProject-1.0-SNAPSHOT.jar"]
