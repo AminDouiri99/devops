@@ -1,21 +1,29 @@
 version: "3"
-
-services: 
-  app: 
-    build: "."
-    depends_on: 
-      - mysqldb
-    ports: 
-      - "9092:9092"
-    restart: on-failure
-    stdin_open: true
-    tty: true
-    
-  mysqldb: 
-    environment: 
-      MYSQL_ROOT_PASSWORD: root
-    image: "mysql:8"
-    ports: 
-      - "9096:9096"
+services:
+  mysqldb:
+    container_name: mysqldb
+    image: mysql/mysql-server:8.0
     restart: unless-stopped
-    volumes: 
+    ports:
+     - 3306:3306
+    environment:
+     - MYSQL_ROOT_PASSWORD=root
+     - MYSQL_DATABASE=achatdb
+     - MYSQL_USER=root
+     - MYSQL_PASSWORD=root
+    volumes:
+     - achatdb:/var/lib/mysql
+
+  spring_app:
+    image: daly667/achat:latest
+    container_name: achatspring
+    restart: on-failure
+    environment:
+     - spring.datasource.url=jdbc:mysql://mysqldb:3306/achatdb?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    ports:
+     - 8089:8089
+    depends_on:
+     - mysqldb
+
+volumes:
+  achatdb:
