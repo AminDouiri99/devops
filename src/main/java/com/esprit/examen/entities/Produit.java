@@ -24,6 +24,13 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Produit implements Serializable {
 
+	public Produit(long l, String string, String string2, int i) {
+		// TODO Auto-generated constructor stub
+		this.idProduit=l;
+		this.codeProduit = string;
+		this.libelleProduit = string2;
+		this.prix = i;
+	}
 	/**
 	 * 
 	 */
