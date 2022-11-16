@@ -16,7 +16,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
     image: "mysql:8"
     ports: 
-      - "3306:3306"
+      - "3310:3306"
     restart: unless-stopped
     volumes: 
       - "/var/lib/mysql"
