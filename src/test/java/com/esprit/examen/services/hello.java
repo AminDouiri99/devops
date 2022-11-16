@@ -20,7 +20,7 @@ import com.esprit.examen.entities.Produit;
 import com.esprit.examen.repositories.ProduitRepository;
 
 @ExtendWith(MockitoExtension.class)
-class ProduitServiceImplMock {
+public class hello {
     @Mock
     ProduitRepository produitRepository;
     @InjectMocks

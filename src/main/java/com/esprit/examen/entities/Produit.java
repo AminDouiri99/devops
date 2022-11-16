@@ -16,6 +16,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.lang.Nullable;
 
 @Entity
 @Getter
@@ -24,13 +25,6 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Produit implements Serializable {
 
-	public Produit(long l, String string, String string2, int i) {
-		// TODO Auto-generated constructor stub
-		this.idProduit=l;
-		this.codeProduit = string;
-		this.libelleProduit = string2;
-		this.prix = i;
-	}
 	/**
 	 * 
 	 */
@@ -47,14 +41,23 @@ public class Produit implements Serializable {
 	private Date dateDerniereModification;
 	@ManyToOne
 	@JsonIgnore
+	@Nullable
 	private Stock stock;
 	@OneToMany(mappedBy = "produit")
 	@JsonIgnore
 	private Set<DetailFacture> detailFacture;
 	@ManyToOne
 	@JsonIgnore
+	@Nullable
 	private CategorieProduit categorieProduit;
-	
+	public  Produit(Long idProduit,String codeProduit,String libelleProduit,float prix){
+		this.idProduit=idProduit;
+		this.codeProduit=codeProduit;
+		this.libelleProduit=libelleProduit;
+		this.prix=prix;
+		this.dateCreation=new Date();
+	}
+
 
 
 	

@@ -50,4 +50,20 @@ public class ReglementServiceImpl implements IReglementService {
 		return reglementRepository.getChiffreAffaireEntreDeuxDate( startDate, endDate);
 	}
 
+	@Override
+	public void deleteReglement(Long idReglement) {
+		// TODO Auto-generated method stub
+		Reglement r = reglementRepository.findById(idReglement).orElse(null);
+		if(r.getFacture()!= null) {
+			Facture facture = factureRepository.findById(r.getFacture().getIdFacture()).orElse(null);
+			if (!facture.getReglements().isEmpty()) {
+				facture.getReglements().remove(r);
+			}
+		}
+		reglementRepository.delete(r);
+		
+		
+		
+	}
+
 }
