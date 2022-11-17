@@ -13,13 +13,14 @@ services:
     
   mysqldb: 
     environment: 
-      MYSQL_ROOT_PASSWORD: root
+      - MYSQL_ALLOW_EMPTY_PASSWORD=1
+      - MYSQL_DATABASE=tpachat
     image: "mysql:8"
     ports: 
-      - "3306:3306"
+      - "3310:3306"
     restart: unless-stopped
     volumes: 
-      - "/home/mysql/data:/var/lib/mysql"
+      - "/var/lib/mysql"
   angular:
     image: seifeddineelbehi/docker-angular
     container_name: docker-angular
