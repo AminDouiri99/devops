@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import com.esprit.examen.entities.Operateur;
 import com.esprit.examen.entities.Produit;
-import com.esprit.examen.services.OperateurRepository;
+package com.esprit.examen.repositories.OperateurRepository;
 
 import java.util.ArrayList;
 import java.util.HashSet;
