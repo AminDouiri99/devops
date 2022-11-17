@@ -24,7 +24,7 @@ import static org.mockito.Mockito.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @ExtendWith(MockitoExtension.class)
-public class OperateurServiceImplMockTest {
+public class OperateurServiceImplMockTest{
     @Mock
     OperateurRepository operateurRepository;
 
