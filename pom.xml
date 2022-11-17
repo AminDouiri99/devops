@@ -84,16 +84,6 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				
 			</plugin>
-<plugin>
-<groupId>org.apache.maven.plugins</groupId>
-<artifactId>maven-surefire-plugin</artifactId>
-<version>2.14.1</version>
-<configuration>
-<includes>
-<include>**/*Test.java</include>
-</includes>
-</configuration>
-</plugin>
 		</plugins>
 	</build>
 	<distributionManagement>
@@ -102,5 +92,4 @@
 			<url>http://172.10.0.140:8081//repository/maven-snapshots/</url>
 		</repository>
 	</distributionManagement>
-<packaging>war</packaging>
 </project>
