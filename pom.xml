@@ -108,7 +108,7 @@
 								    <configuration>
 							<testFailureIgnore>true</testFailureIgnore>
 									    <includes>
-<include>src/test/java/com/esprit/examen/services/OperateurServiceImplTest.java</include>
+<include>./src/test/java/com/esprit/examen/services/OperateurServiceImplTest.java</include>
 </includes>
 						    </configuration>
 
