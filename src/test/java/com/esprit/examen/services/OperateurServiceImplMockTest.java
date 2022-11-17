@@ -8,9 +8,9 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import tn.esprit.rh.achat.entities.Operateur;
-import tn.esprit.rh.achat.entities.Produit;
-import tn.esprit.rh.achat.repositories.OperateurRepository;
+import com.esprit.examen.entities.Operateur;
+import com.esprit.examen.entities.Produit;
+import tn.esprit.examen.repositories.OperateurRepository;
 
 import java.util.ArrayList;
 import java.util.HashSet;
