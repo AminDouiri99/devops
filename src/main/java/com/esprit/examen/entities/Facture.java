@@ -13,7 +13,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -23,11 +22,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 public class Facture implements Serializable {
-	public Facture(Date dateNaissance, Date dateNaissance2, boolean b, Object object, Object object2, Object object3) {
-		// TODO Auto-generated constructor stub
-	}
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -49,15 +44,5 @@ public class Facture implements Serializable {
     @JsonIgnore
     private Set<Reglement> reglements;
 
-	public Facture(Date dateCreationFacture , Date dateDerniereModificationFacture , Boolean archivee, Set<DetailFacture> detailsFacture,Fournisseur fournisseur,Set<Reglement> reglements ) {
-		super();
-		this.dateCreationFacture = dateCreationFacture;
-		this.dateDerniereModificationFacture = dateDerniereModificationFacture;
-		this.archivee = archivee;
-		this.fournisseur = fournisseur;
-		this.detailsFacture =detailsFacture;
-		this.reglements = reglements;
-
-	}
 	
 }

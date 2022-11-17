@@ -16,6 +16,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.lang.Nullable;
 
 @Entity
 @Getter
@@ -40,24 +41,25 @@ public class Produit implements Serializable {
 	private Date dateDerniereModification;
 	@ManyToOne
 	@JsonIgnore
+	@Nullable
 	private Stock stock;
 	@OneToMany(mappedBy = "produit")
 	@JsonIgnore
 	private Set<DetailFacture> detailFacture;
 	@ManyToOne
 	@JsonIgnore
+	@Nullable
 	private CategorieProduit categorieProduit;
-	
-
-	public Produit( String codeProduit, String libelleProduit, float prix, Date dateCreation,
-			Date dateDerniereModification) {
-		super();
-		this.codeProduit = codeProduit;
-		this.libelleProduit = libelleProduit;
-		this.prix = prix;
-		this.dateCreation = dateCreation;
-		this.dateDerniereModification = dateDerniereModification;
+	public  Produit(Long idProduit,String codeProduit,String libelleProduit,float prix){
+		this.idProduit=idProduit;
+		this.codeProduit=codeProduit;
+		this.libelleProduit=libelleProduit;
+		this.prix=prix;
+		this.dateCreation=new Date();
 	}
+
+
+
 	
 
 }

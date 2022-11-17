@@ -45,12 +45,5 @@ public class Fournisseur implements Serializable {
     private DetailFournisseur detailFournisseur;
     
 
-    public Fournisseur( String code, String libelle, CategorieFournisseur categorieFournisseur,DetailFournisseur detailFournisseur) {
-		super();
-		this.code = code;
-		this.libelle = libelle;
-		this.categorieFournisseur = categorieFournisseur;
-		this.detailFournisseur = detailFournisseur;
-
-	}
+	
 }
