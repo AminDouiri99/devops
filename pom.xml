@@ -107,6 +107,9 @@
 					<version>2.14.1</version>
 								    <configuration>
 							<testFailureIgnore>true</testFailureIgnore>
+									    <includes>
+<include>src/test/java/com/esprit/examen/services/OperateurServiceImplTest.java</include>
+</includes>
 						    </configuration>
 
 					</plugin>
